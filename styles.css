@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px; /* Added padding to prevent content from touching edges */
+}
+
+.logo {
+    max-width: 100%; /* Adjust the max-width as needed */
+    width: 1000px;
+    height: auto; /* Ensures the image resizes responsively */
+    display: block; /* Removes any default inline spacing */
+    margin: 0 auto; /* Centers the image horizontally */
+    filter: grayscale(70%); /* Converts the logo to black and white by default */
+    opacity: 0.1; /* Adjust opacity to make the logo less bright */
+    transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition for the filter property and opacity */
+}
+
+.logo:hover {
+    filter: none; /* Removes the grayscale filter on hover */
+    opacity: 1;
+}
+
+.social-links {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links .fa {
+    padding: 10px; /* Adjusted padding for better touch area */
+    font-size: 24px; /* Adjusted font size for better responsiveness */
+    min-width: 40px; /* Adjusted minimum width to prevent icons from collapsing */
+    text-align: center;
+    text-decoration: none;
+    margin: 0 10px; /* Adjusted margin between social icons */
+    opacity: 0.5;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-links .fa:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-flickr {
+    background: #f40083;
+    color: white;
+}
+
+#starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
